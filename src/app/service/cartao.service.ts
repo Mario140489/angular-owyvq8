@@ -1,10 +1,43 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, RequestMethod, RequestOptions, Headers } from '@angular/http';
-@Injectable()
-export class CartaoService {
+import { Injectable, Inject, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { map } from 'rxjs/operators';
 
-  constructor(private _http: Http) { }
- pegar(){
-   return this._http.get('http://5c929387e7b1a00014078e2a.mockapi.io/api/cartao/get').pipe(ret => ret);
- }
+@Injectable()
+export class ContasService {
+  rootURL: string;
+  listData: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    
+    this.rootURL = baseUrl;
+  }
+
+  adicionar(data) {
+    debugger;
+    return this.http.post(this.rootURL + 'api/Contas',data);
+ 
+  }
+  update(id,data)
+  {
+    return this.http.put(this.rootURL + 'api/Contas/'+ id, data);
+
+  }
+  delete(id) {
+    return this.http.delete(this.rootURL + 'api/Contas/' + id);
+  }
+  refreshList() {
+    return this.http.get(this.rootURL + 'api/Contas/GetContas').pipe(map(response => response));
+      //subscribe(result => {
+        ////this.list = new MatTableDataSource<conta>(result);
+         //this.dataSource = new MatTableDataSource<conta>(result);
+         //this.dataSource.paginator = this.paginator;
+       // this.dataSource = new MatTableDataSource<Element>(result);
+     // });
+   
+  }
+
+ 
 }
+
+
