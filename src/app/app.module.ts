@@ -7,9 +7,10 @@ import { HelloComponent } from './hello.component';
 import {MatCheckboxModule} from '@angular/material';
 import { CartaoService } from './cartao.service';
 import { HttpModule} from '@angular/http';
+import { CartaoComponent } from './cartao/cartao.component';
 @NgModule({
   imports:      [ BrowserModule, FormsModule,MatCheckboxModule,HttpModule],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, HelloComponent, CartaoComponent ],
   bootstrap:    [ AppComponent ],
   providers: [CartaoService]
 })

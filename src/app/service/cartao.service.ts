@@ -5,6 +5,6 @@ export class CartaoService {
 
   constructor(private _http: Http) { }
  pegar(){
-   return this._http.get('http://5c929387e7b1a00014078e2a.mockapi.io/api/cartao/get').pipe();
+   return this._http.get('http://5c929387e7b1a00014078e2a.mockapi.io/api/cartao/get').pipe(ret => ret);
  }
 }
