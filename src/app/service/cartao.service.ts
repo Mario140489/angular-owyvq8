@@ -28,13 +28,6 @@ export class ContasService {
   }
   refreshList() {
     return this.http.get(this.rootURL + 'api/Contas/GetContas').pipe(map(response => response));
-      //subscribe(result => {
-        ////this.list = new MatTableDataSource<conta>(result);
-         //this.dataSource = new MatTableDataSource<conta>(result);
-         //this.dataSource.paginator = this.paginator;
-       // this.dataSource = new MatTableDataSource<Element>(result);
-     // });
-   
   }
 
  
