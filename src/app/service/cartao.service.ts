@@ -4,7 +4,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class ContasService {
+export class cartaoservice {
   rootURL: string;
   listData: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
