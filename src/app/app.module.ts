@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import {MatCheckboxModule,
-MatFormFieldModule,MatInputModule,
+MatFormFieldModule,MatInputModule,MatIconModule,
 MatCardModule} from '@angular/material';
 import { cartaoservice } from './service/cartao.service';
 import { HttpModule} from '@angular/http';
+import { NgxCurrencyModule } from "ngx-currency";
 @NgModule({
   imports:      [ BrowserModule, FormsModule,MatCheckboxModule,HttpModule,MatCardModule,
-  MatFormFieldModule,MatInputModule],
+  MatFormFieldModule,MatInputModule,MatIconModule,NgxCurrencyModule],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
   providers: [cartaoservice]
