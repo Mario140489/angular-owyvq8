@@ -1,15 +1,32 @@
-<div class="container-fluid" style="font-size:small" >
-<h3>{{name}}</h3>
-<hr>
-<mat-card>
-  <div class="row">
-  <div class="col-sm-12"> 
-<form class="example-form">
-  <mat-form-field class="col-sm-03">
-    <input matInput placeholder="Favorite food">
-  </mat-form-field>
-</form>
+<div style="font-size:small">
+  <div ng-app="myApp" class="row">
+    <div class="col-sm-12">
+      <h3>{{name}}</h3>
+      <hr />
+      <mat-card>
+        <form>
+          <div class="col-sm-12">
+            <mat-form-field class="row col-sm-1">
+              <input id="id" readonly  name="idContas" idContas matInput maxlength="150" placeholder="Id" [(ngModel)]='objconta.idContas' #idContas="ngModel" >
+            </mat-form-field>
+          </div>
+          <div class="row col-sm-12">
+            <mat-form-field class="col-sm-6">
+              <input name="descricao" descricao matInput maxlength="150" placeholder="Descrição da conta" [(ngModel)]='objconta.descricao' #descricao="ngModel" required>
+              <mat-error *ngIf="descricao.touched && !descricao.valid ">Este campo é obrigatorio</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-sm-3">
+              <input currencyMask matInput placeholder="Valor" name="valor" valor [(ngModel)]='objconta.valor' #valor="ngModel" autocomplete="off" maxlength="12" class="exemplo-right-align dinheiro" required [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+              <mat-error *ngIf="descricao.touched && !descricao.valid ">Este campo é obrigatorio</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-sm-3 col-xl-2">
+              <input type="date" matInput placeholder="Vencimento" name="vencimento" vencimento [(ngModel)]='objconta.vencimento' #vencimento="ngModel" autocomplete="off" class="exemplo-right-align dinheiro" required>
+            </mat-form-field>
+            </div>
+            <div class="col-sm-12 exemplo-right-align ">
+              <button type="submit" mat-flat-button color="primary"><mat-icon style="font-size:20px">save</mat-icon>Salvar</button>
+            </div>
+        </form>
+      </mat-card>
+    </div>
   </div>
-  </div>
-</mat-card>
-</div>
