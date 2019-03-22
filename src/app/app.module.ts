@@ -9,11 +9,11 @@ MatFormFieldModule,MatInputModule,MatIconModule,
 MatCardModule} from '@angular/material';
 import { cartaoservice } from './service/cartao.service';
 import { HttpModule} from '@angular/http';
-import { NgxCurrencyModule } from "ngx-currency";
+import { CurrencyMaskModule } from "ngx-currency-mask";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,MatCheckboxModule,HttpModule,MatCardModule,
-  MatFormFieldModule,MatInputModule,MatIconModule,NgxCurrencyModule,BrowserAnimationsModule],
+  MatFormFieldModule,MatInputModule,MatIconModule,CurrencyMaskModule,BrowserAnimationsModule],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
   providers: [cartaoservice]
