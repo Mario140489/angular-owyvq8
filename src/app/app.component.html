@@ -6,17 +6,17 @@
       <mat-card>
         <form>
           <div class="col-sm-12">
-            <mat-form-field class="row col-sm-1">
+            <mat-form-field class="row col-sm-3">
               <input id="id" readonly  name="idContas" idContas matInput maxlength="150" placeholder="Id">
             </mat-form-field>
           </div>
           <div class="row col-sm-12">
             <mat-form-field class="col-sm-6">
-              <input name="descricao"  matInput maxlength="150" placeholder="Descrição da conta" required>
+              <input name="descricao"  matInput maxlength="150" placeholder="Descrição cartão" autocomplete="off" required>
               <mat-error *ngIf=" ">Este campo é obrigatorio</mat-error>
             </mat-form-field>
-            <mat-form-field class="col-sm-3">
-              <input currencyMask matInput placeholder="Valor" name="valor"   autocomplete="off" maxlength="12" class="exemplo-right-align dinheiro" required [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+            <mat-form-field class="col-sm-6">
+              <input mask="0000 0000 0000 0000" matInput  placeholder="Numero do cartão" name="valor"   autocomplete="off" maxlength="19">
               <mat-error *ngIf="">Este campo é obrigatorio</mat-error>
             </mat-form-field>
             
